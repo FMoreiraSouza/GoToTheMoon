@@ -1,4 +1,4 @@
-package com.example.game.utils
+package com.example.goto_the_moon.utils
 
 import android.content.Context
 import android.graphics.Bitmap

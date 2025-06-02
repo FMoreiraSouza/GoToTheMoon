@@ -1,14 +1,14 @@
-package com.example.game.utils
+package com.example.goto_the_moon.utils
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import com.example.game.entity.Asteroid
-import com.example.game.entity.Collision
-import com.example.game.entity.Laser
-import com.example.game.entity.PowerUp
-import com.example.game.entity.Ship
-import com.example.game.entity.Star
-import com.example.game.enum.PowerUpType
+import com.example.goto_the_moon.entity.Asteroid
+import com.example.goto_the_moon.entity.Collision
+import com.example.goto_the_moon.entity.Laser
+import com.example.goto_the_moon.entity.PowerUp
+import com.example.goto_the_moon.entity.Ship
+import com.example.goto_the_moon.entity.Star
+import com.example.goto_the_moon.enum.PowerUpType
 import kotlin.random.Random
 
 class EntityManager(

@@ -1,12 +1,12 @@
-package com.example.game
+package com.example.goto_the_moon
 
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.example.game.screen.StartScreen
-import com.example.game.utils.Fonts
+import com.example.goto_the_moon.screen.StartScreen
+import com.example.goto_the_moon.utils.Fonts
 
 class MainActivity : AppCompatActivity() {
     private var game: Game? = null

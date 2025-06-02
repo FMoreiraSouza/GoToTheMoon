@@ -1,8 +1,8 @@
-package com.example.game.screen
+package com.example.goto_the_moon.screen
 
 import android.graphics.Canvas
 import android.graphics.Paint
-import com.example.game.Game
+import com.example.goto_the_moon.Game
 
 abstract class Screen(game: Game) {
     protected val canvas = Canvas(game.buffer)

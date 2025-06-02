@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.game"
+    namespace = "com.example.goto_the_moon"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.game"
+        applicationId = "com.example.goto_the_moon"
         minSdk = 30
         targetSdk = 35
         versionCode = 1

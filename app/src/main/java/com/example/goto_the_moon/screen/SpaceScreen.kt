@@ -1,4 +1,4 @@
-package com.example.game.screen
+package com.example.goto_the_moon.screen
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -10,13 +10,13 @@ import android.graphics.RectF
 import android.graphics.Typeface
 import android.view.MotionEvent
 import androidx.core.content.ContextCompat
-import com.example.game.Game
-import com.example.game.R
-import com.example.game.entity.ShakeEffect
-import com.example.game.entity.Ship
-import com.example.game.utils.EntityManager
-import com.example.game.utils.ResourceLoader
-import com.example.game.utils.SoundManager
+import com.example.goto_the_moon.Game
+import com.example.goto_the_moon.R
+import com.example.goto_the_moon.entity.ShakeEffect
+import com.example.goto_the_moon.entity.Ship
+import com.example.goto_the_moon.utils.EntityManager
+import com.example.goto_the_moon.utils.ResourceLoader
+import com.example.goto_the_moon.utils.SoundManager
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.sqrt
@@ -106,7 +106,8 @@ class SpaceScreen(private val game: Game) : Screen(game) {
         paint.textAlign = Paint.Align.CENTER
         paint.textSize = 50f
         try {
-            timerTextPaint.typeface = Typeface.createFromAsset(game.context.assets, "Chalkboard.ttf")
+            timerTextPaint.typeface =
+                Typeface.createFromAsset(game.context.assets, "Chalkboard.ttf")
             paint.typeface = Typeface.createFromAsset(game.context.assets, "Chalkboard.ttf")
         } catch (e: Exception) {
             e.printStackTrace()
@@ -117,11 +118,11 @@ class SpaceScreen(private val game: Game) : Screen(game) {
     private fun loadResources() {
         resourceLoader.loadBitmap("ship.png", 250, 250)
         resourceLoader.loadBitmap("asteroid.png", 200, 200)
-        resourceLoader.loadBitmap("space_background.png", 1080, 1920)
         game.context.assets.openFd("collision.mp3").use { soundManager.loadSound("collision", it) }
         game.context.assets.openFd("game_over.mp3").use { soundManager.loadSound("game_over", it) }
         game.context.assets.openFd("laser.mp3").use { soundManager.loadSound("laser", it) }
-        game.context.assets.openFd("mission_complete.mp3").use { soundManager.loadSound("mission_complete", it) }
+        game.context.assets.openFd("mission_complete.mp3")
+            .use { soundManager.loadSound("mission_complete", it) }
         val drawable = ContextCompat.getDrawable(game.context, R.drawable.ic_fire_laser)
         fireIcon = drawable?.let {
             val bitmap = createBitmap(100, 100)
@@ -188,9 +189,9 @@ class SpaceScreen(private val game: Game) : Screen(game) {
             gameOverAlpha = (gameOverAlpha + (et / 10f).toInt()).coerceAtMost(255)
         }
 
-        shakeEffect?.let {
-            if (!it.update(et)) shakeEffect = null
-        }
+//        shakeEffect?.let {
+//            if (!it.update(et)) shakeEffect = null
+//        }
 
         if (pendingGameOver && entityManager.collisions.isEmpty()) {
             gameOver = true
@@ -201,11 +202,7 @@ class SpaceScreen(private val game: Game) : Screen(game) {
     }
 
     override fun draw() {
-        resourceLoader.getBitmap("space_background.png")?.let {
-            canvas.drawBitmap(it, 0f, backgroundY, null)
-            canvas.drawBitmap(it, 0f, backgroundY - 1920f, null)
-        } ?: canvas.drawColor(Color.BLACK)
-
+        canvas.drawColor(Color.BLACK)
         shakeEffect?.apply(canvas)
         entityManager.render(canvas, resourceLoader.getBitmap("asteroid.png"))
         ship.render(canvas, resourceLoader.getBitmap("ship.png"), entityManager.shieldActive)
@@ -217,7 +214,12 @@ class SpaceScreen(private val game: Game) : Screen(game) {
         val centerX = fireButtonRect.centerX()
         val centerY = fireButtonRect.centerY()
         val radius = fireButtonRect.width() / 2
-        canvas.drawCircle(centerX, centerY, radius, if (isFiring) fireButtonPressedPaint else fireButtonPaint)
+        canvas.drawCircle(
+            centerX,
+            centerY,
+            radius,
+            if (isFiring) fireButtonPressedPaint else fireButtonPaint
+        )
 
         fireIcon?.let {
             val iconSize = radius * (if (isFiring) 1.08f else 1.2f)
@@ -255,7 +257,7 @@ class SpaceScreen(private val game: Game) : Screen(game) {
             canvas.drawRect(rect, lifeBarBorderPaint)
         }
 
-        val elapsedTime = (gameTimer / 1000f).coerceAtMost(60f).toInt() + 1
+        val elapsedTime = (gameTimer / 1000f).coerceAtMost(60f).toInt()
         val timerX = canvas.width / 2f
         val timerY = startY + barHeight + 90f
         val timerRadius = 50f
@@ -267,7 +269,13 @@ class SpaceScreen(private val game: Game) : Screen(game) {
             val startYProgress = timerY + (timerRadius + 5f) * sin(rad).toFloat()
             val endXProgress = timerX + (timerRadius + 15f) * cos(rad).toFloat()
             val endYProgress = timerY + (timerRadius + 15f) * sin(rad).toFloat()
-            canvas.drawLine(startXProgress, startYProgress, endXProgress, endYProgress, timerProgressPaint)
+            canvas.drawLine(
+                startXProgress,
+                startYProgress,
+                endXProgress,
+                endYProgress,
+                timerProgressPaint
+            )
         }
         canvas.drawText("$elapsedTime", timerX, timerY + 20f, timerTextPaint)
 
