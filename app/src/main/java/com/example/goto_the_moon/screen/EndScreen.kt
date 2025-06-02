@@ -1,4 +1,4 @@
-package com.example.game.screen
+package com.example.goto_the_moon.screen
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -8,7 +8,7 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.Typeface
 import android.view.MotionEvent
-import com.example.game.Game
+import com.example.goto_the_moon.Game
 
 class EndScreen(private val game: Game, private val isWin: Boolean) : Screen(game) {
     private var textY = 0f

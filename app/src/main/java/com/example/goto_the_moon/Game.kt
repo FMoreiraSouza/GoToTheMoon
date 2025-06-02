@@ -1,4 +1,4 @@
-package com.example.game
+package com.example.goto_the_moon
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,7 +12,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import androidx.core.graphics.createBitmap
-import com.example.game.screen.Screen
+import com.example.goto_the_moon.screen.Screen
 import kotlin.math.abs
 
 @SuppressLint("ClickableViewAccessibility")

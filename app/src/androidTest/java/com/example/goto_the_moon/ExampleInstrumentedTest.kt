@@ -1,4 +1,4 @@
-package com.example.game
+package com.example.goto_the_moon
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

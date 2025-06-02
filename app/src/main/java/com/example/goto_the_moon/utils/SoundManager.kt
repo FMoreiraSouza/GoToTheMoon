@@ -1,6 +1,5 @@
-package com.example.game.utils
+package com.example.goto_the_moon.utils
 
-import android.content.Context
 import android.content.res.AssetFileDescriptor
 import android.media.AudioAttributes
 import android.media.MediaPlayer

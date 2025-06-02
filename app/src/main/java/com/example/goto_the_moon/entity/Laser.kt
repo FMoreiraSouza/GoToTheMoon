@@ -1,4 +1,4 @@
-package com.example.game.entity
+package com.example.goto_the_moon.entity
 
 import android.graphics.Canvas
 import android.graphics.Color

@@ -1,9 +1,9 @@
-package com.example.game.entity
+package com.example.goto_the_moon.entity
 
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import com.example.game.enum.PowerUpType
+import com.example.goto_the_moon.enum.PowerUpType
 
 
 class PowerUp(var x: Float, var y: Float, val type: PowerUpType) {
