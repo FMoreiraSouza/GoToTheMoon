@@ -2,8 +2,6 @@
   <img src="app/src/main/assets/start.png" alt="Logomarca" width="300">
 </p>
 
-# 🚀 Go To The Moon
-
 ![Android](https://img.shields.io/badge/Android-14-green?logo=android)
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0-blue?logo=kotlin)
 ![Canvas](https://img.shields.io/badge/Canvas-Rendering-orange)
