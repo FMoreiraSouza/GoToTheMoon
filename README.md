@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="app/src/main/assets/start.png" alt="Logomarca" width="300">
+</p>
+
 # 🚀 Go To The Moon
 
 ![Android](https://img.shields.io/badge/Android-14-green?logo=android)
